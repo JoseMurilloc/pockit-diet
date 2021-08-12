@@ -26,7 +26,6 @@ import { Button } from '../../components/Button';
 export const SignIn: React.FC = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" backgroundColor="#FDFDFD"/>
       <Container>
         <PlantImageTop source={PlantUp} />
         <Header>

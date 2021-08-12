@@ -10,6 +10,8 @@ import {
 import theme from './global/styles/theme';
 import AppLoading from 'expo-app-loading';
 import { SignIn } from './screens/SignIn';
+import Welcome from './screens/Welcome';
+import { StatusBar } from 'react-native';
 
 export default function App() {
   const [fontLoaded] = useFonts({
@@ -23,7 +25,8 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme} >
-      <SignIn />
+      <StatusBar barStyle="dark-content" backgroundColor="#FDFDFD"/>
+      <Welcome />
     </ThemeProvider>
   );
 }
