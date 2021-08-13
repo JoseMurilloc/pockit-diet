@@ -1,14 +1,26 @@
 import { TextInput } from 'react-native-gesture-handler';
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
-export const Container = styled.View`
+type ContainerProps = {
+  isError: boolean,
+}
+
+
+export const Container = styled.View<ContainerProps>`
   width: 100%;
   height: 54px;
   flex-direction: row;
   align-items: center;
   padding: 0 17px;
-  background: #F0F0F0;
-  border: 0.5px solid #949494;
+  
+  ${props => props.isError ? css`
+    border: 1px solid ${({theme}) => theme.colors.error};
+    background: ${({theme}) => theme.colors.error_light};
+  ` : css `
+    border: 0.5px solid #949494;
+    background: ${({theme}) => theme.colors.shape};
+  `}
+
   border-radius: 8px;
 `;
 

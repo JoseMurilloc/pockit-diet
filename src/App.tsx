@@ -26,7 +26,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme} >
       <StatusBar barStyle="dark-content" backgroundColor="#FDFDFD"/>
-      <Welcome />
+      <SignIn />
     </ThemeProvider>
   );
 }

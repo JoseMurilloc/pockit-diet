@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Image, StatusBar, View } from 'react-native';
+import {  Image, TouchableWithoutFeedback, Keyboard, View, Text } from 'react-native';
 
 import logoPocketDiet from '../../global/assets/logoPocketDiet.png';
 import PlantUp from '../../global/assets/PlantUp.png';
@@ -22,10 +22,45 @@ import {
   ContainerButton
 } from './styles';
 import { Button } from '../../components/Button';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from "yup";
+
+import InputForm from '../../components/Form/InputForm';
+
+
+type FormData = {
+  email: string;
+  password: string;
+}
+
+const schemaSignIn = Yup.object().shape({
+  email: Yup
+    .string()
+    .required('Campo é obrigatório')
+    .email('Formato de email inválido'),
+  password: Yup
+    .string()
+    .required('Campo é obrigatório')
+    .min(6, 'Requer pelo menos 6 caracteres')
+})
 
 export const SignIn: React.FC = () => {
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schemaSignIn)
+  })
+
+  async function handleSignIn(data: FormData) {
+    console.log(data)
+  }
+
   return (
-    <>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Container>
         <PlantImageTop source={PlantUp} />
         <Header>
@@ -42,18 +77,26 @@ export const SignIn: React.FC = () => {
 
             <View>
               <LabelInput>Email</LabelInput>
-              <Input 
+              <InputForm
+                control={control}
+                name="email"
                 placeholder="E-mail" 
                 type="sms"
+                autoCorrect={false}
+                keyboardType="email-address"
+                error={errors.email && errors.email.message}
               />
             </View>
 
             <View style={{marginTop: 16}}>
               <LabelInput>Senha</LabelInput>
-              <Input 
+              <InputForm
+                control={control} 
+                name="password"
                 placeholder="Senha" 
                 secureTextEntry={true}
                 type="lock"
+                error={errors.password && errors.password.message}
               />
             </View>
 
@@ -62,7 +105,10 @@ export const SignIn: React.FC = () => {
             </ForgotPassword>
 
             <ContainerButton>
-              <Button buttonText="Entrar" />
+              <Button 
+                buttonText="Entrar" 
+                onPress={handleSubmit(handleSignIn)}
+              />
             </ContainerButton>
           </Form>
         </Main>
@@ -70,6 +116,6 @@ export const SignIn: React.FC = () => {
           <Image source={PlantDown} />
         </PlantImageBottom>
       </Container>
-    </>
+    </TouchableWithoutFeedback>
   );
 }
