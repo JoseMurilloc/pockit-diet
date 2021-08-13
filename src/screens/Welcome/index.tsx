@@ -82,7 +82,7 @@ const Welcome: React.FC = () => {
 
         <Button
           onPress={handleNextPage}
-          buttonText="Continuar"
+          buttonText={MAX_PAGE_COUNT ? 'Continuar' : 'Começar'}
         />
       </ContentMain>
 
