@@ -1,27 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import React from 'react';
+import {WelcomeLayout} from './welcomeLayout'
 
-import { 
-  Container,
-  Header,
-  ButtonJump,
-  ButtonJumpText,
-  ContentPicture,
-  ImageWelcome,
-  ContentMain,
-  Title,
-  Message,
-  ContentProgressBar
-} from './styles';
-
-import WelcomeImage from '../../global/assets/welcome.png';
-import { Button } from '../../components/Button';
-import {ProgressBarWelcome} from '../../components/ProgressBar';
 
 const Welcome: React.FC = () => {
-
-  const [indexPage, setIndexPage] = useState(0);
-  const [progress, setProgress] = useState(0);
+  const [indexPage, setIndexPage] = React.useState(0);
+  const [progress, setProgress] = React.useState(0);
   const contentMessages = [
     {
       title: 'Plano alimentar', 
@@ -39,7 +22,7 @@ const Welcome: React.FC = () => {
   const MAX_PAGE_COUNT = indexPage < 2;
 
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (indexPage <= 2) {
       setProgress(state => state + 0.36)
     }
@@ -55,38 +38,15 @@ const Welcome: React.FC = () => {
 
 
   return (
-    <Container>
-      <Header>
-        {MAX_PAGE_COUNT ? (
-          <ButtonJump>
-            <ButtonJumpText>Pular</ButtonJumpText>
-          </ButtonJump>
-        ) : (
-          <View style={{width: 73, height: 51, marginTop: 40}} />
-        )}
-      </Header>
-
-      <ContentPicture>
-        <ImageWelcome source={WelcomeImage}/>
-      </ContentPicture>
-
-      <ContentMain>
-        <Title>{contentMessages[indexPage].title}</Title>
-        <Message>{contentMessages[indexPage].message}</Message>
-
-        <ContentProgressBar>
-          <ProgressBarWelcome 
-            progress={progress}
-          />
-        </ContentProgressBar>
-
-        <Button
-          onPress={handleNextPage}
-          buttonText={MAX_PAGE_COUNT ? 'Continuar' : 'Começar'}
-        />
-      </ContentMain>
-
-    </Container>
+    <WelcomeLayout 
+      data={{
+        MAX_PAGE_COUNT, 
+        contentMessages, 
+        indexPage, 
+        progress, 
+        handleNextPage
+      }}
+    />
   );
 }
 
