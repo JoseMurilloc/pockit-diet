@@ -9,9 +9,9 @@ import {
 } from '@expo-google-fonts/raleway'
 import theme from './global/styles/theme';
 import AppLoading from 'expo-app-loading';
-import { SignIn } from './screens/SignIn';
-import Welcome from './screens/Welcome';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
+import { AppRoutes } from './routes/app.routes';
 
 export default function App() {
   const [fontLoaded] = useFonts({
@@ -25,8 +25,10 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme} >
-      <StatusBar barStyle="dark-content" backgroundColor="#FDFDFD"/>
-      <SignIn />
-    </ThemeProvider>
+        <StatusBar barStyle="dark-content" backgroundColor="#FDFDFD"/>
+        <NavigationContainer>
+          <AppRoutes />
+        </NavigationContainer>
+      </ThemeProvider>
   );
 }
