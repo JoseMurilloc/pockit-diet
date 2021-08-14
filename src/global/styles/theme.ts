@@ -1,9 +1,11 @@
 export default {
   colors: {
     primary: '#74A065',
+    primary_strong: '#406334',
 
     shape: '#F0F0F0',
     background: '#FDFDFD',
+    background_tab: '#FCFCFC',
 
     text: '#131313',
     text_light: 'rgba(20, 20, 20, 0.5)',
