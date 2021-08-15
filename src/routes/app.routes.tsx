@@ -38,6 +38,7 @@ export function AppRoutes() {
         tabBarStyle: {
           backgroundColor: theme.colors.background_tab,
           height: 72,
+          paddingHorizontal: 54,
         },
         tabBarInactiveTintColor: theme.colors.text,
         headerShown: false,
