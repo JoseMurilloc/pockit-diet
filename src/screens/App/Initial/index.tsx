@@ -3,6 +3,8 @@ import Styles from './styles';
 
 import ProfileImage from '../../../global/assets/profile.png';
 import { ProgressBarWelcome } from '../../../components/ProgressBar';
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import { Card } from '../../../components/Card';
 
 const Initial: React.FC = () => {
   return (
@@ -43,6 +45,18 @@ const Initial: React.FC = () => {
         <Styles.TitleMeal>
           Refeições
         </Styles.TitleMeal>
+
+        <FlatList 
+          data={[0, 1, 2, 3]}
+          keyExtractor={item => item}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            marginTop: 16,
+          }}
+          renderItem={() => (
+            <Card title="Café da manhã" hour="9:00" />
+          )}
+        />
       </Styles.ContainerMeals>
     </Styles.Container>
   );
