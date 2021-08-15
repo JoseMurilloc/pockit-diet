@@ -32,6 +32,12 @@ export function WelcomeLayout ({
         <Styles.ContentProgressBar>
           <ProgressBarWelcome 
             progress={progress}
+            styles={{
+              height: 11,
+              color: "#37582b",
+              borderRadius: 8,
+              width: 325
+            }}
           />
         </Styles.ContentProgressBar>
 
