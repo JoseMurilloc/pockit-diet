@@ -54,7 +54,24 @@ const Initial: React.FC = () => {
             marginTop: 16,
           }}
           renderItem={() => (
-            <Card title="Café da manhã" hour="9:00" />
+            <Card 
+              title="Café da manhã" 
+              hour="9:00"
+              meals={[
+                {
+                  name: "Cuscus 80g",
+                  calories: "190 kcal"
+                },
+                {
+                  name: "Suco de fruta 200ml",
+                  calories: "80 kcal"
+                },
+                {
+                  name: "Suco de fruta de Uva 200ml",
+                  calories: "80 kcal"
+                }
+              ]}
+            />
           )}
         />
       </Styles.ContainerMeals>
