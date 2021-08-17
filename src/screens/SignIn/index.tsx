@@ -1,11 +1,14 @@
 import React from 'react';
-import {  Image, TouchableWithoutFeedback, Keyboard, View, Text } from 'react-native';
+import { 
+  Image, 
+  TouchableWithoutFeedback, 
+  Keyboard, 
+  View
+} from 'react-native';
 
 import logoPocketDiet from '../../global/assets/logoPocketDiet.png';
 import PlantUp from '../../global/assets/PlantUp.png';
 import PlantDown from '../../global/assets/PlantDown.png';
-
-import {Input} from '../../components/Input';
 
 import {
   Container,
@@ -101,7 +104,7 @@ export const SignIn: React.FC = () => {
             </View>
 
             <ForgotPassword>
-              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
+                <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
 
             <ContainerButton>
