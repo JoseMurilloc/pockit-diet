@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
-export const Container = styled(SafeAreaView)`
+const Container = styled(SafeAreaView)`
   flex: 1;
   background-color: ${({theme}) => theme.colors.background};
   padding: 0 16px;
@@ -11,10 +11,12 @@ const Header = styled.View`
   flex-direction: row;
   width: 100%;
 `;
+
 const Content = styled.View`
   width: 79%;
   margin-top: 80px;
 `;
+
 const Title = styled.Text`
   font-size: 24px;
   line-height: 28px;
@@ -22,6 +24,7 @@ const Title = styled.Text`
   font-family: ${({theme}) => theme.fonts.bold};
   margin-bottom: 4px;
 `;
+
 const Message = styled.Text`
   height: 32px;
   width: 318px;
@@ -31,16 +34,21 @@ const Message = styled.Text`
   
   font-family: ${({theme}) => theme.fonts.regular};
 `;
+
 const ProfileAvatarContainer = styled.View`
   margin-top: 32px;
 `;
+
 const ProfileAvatarImage = styled.Image`
-  border-radius: 30px;
+  border-radius: 27px;
+  width: 56px;
+  height: 56px;
 `;
 
 const ProgressBarWelcomeContainer = styled.View`
   margin-top: 32px;
 `;
+
 const TitleProgressBar = styled.Text`
   font-size: 12px;
   line-height: 14px;

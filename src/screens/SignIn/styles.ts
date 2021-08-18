@@ -59,11 +59,8 @@ export const InputContainer = styled.View`
   border-radius: 8px;
 `;
 
-export const Input = styled.TextInput`
-
-`;
-export const ContainerInput = styled.View`
-`;
+export const Input = styled.TextInput``;
+export const ContainerInput = styled.View``;
 export const Label = styled.Text``;
 
 export const ForgotPassword = styled.View`
@@ -83,6 +80,7 @@ export const PlantImageTop = styled.Image`
   right: 12%; 
   top: 0%;
 `;
+
 export const PlantImageBottom = styled.View`
   position: absolute; 
   left: 0%;

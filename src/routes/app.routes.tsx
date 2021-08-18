@@ -1,6 +1,6 @@
 import React from 'react' 
 
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { MaterialIcons } from '@expo/vector-icons'
 import { useTheme } from 'styled-components'
 
@@ -21,6 +21,7 @@ export function AppRoutes() {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: theme.colors.primary_strong,
+        tabBarItemStyle: {},
         tabBarLabelStyle: {
           fontFamily: theme.fonts.medium,
           fontSize: 12,
@@ -28,7 +29,7 @@ export function AppRoutes() {
         tabBarStyle: {
           backgroundColor: theme.colors.background_tab,
           height: 72,
-          paddingHorizontal: 54,
+          paddingHorizontal: 55,
         },
         tabBarInactiveTintColor: theme.colors.text,
         headerShown: false,
@@ -41,7 +42,7 @@ export function AppRoutes() {
           tabBarIcon: ({focused, color, size}) => (
             <MaterialIcons 
               name="home" 
-              size={26} 
+              size={focused ? 30 : 26} 
               color={focused ?  
                 theme.colors.primary_strong 
                 : theme.colors.text_super_light
@@ -58,7 +59,7 @@ export function AppRoutes() {
           tabBarIcon: ({focused, color, size}) => (
             <MaterialIcons 
               name="local-dining" 
-              size={26} 
+              size={focused ? 30 : 26} 
               color={focused ?  
                 theme.colors.primary_strong 
                 : theme.colors.text_super_light
@@ -75,7 +76,7 @@ export function AppRoutes() {
           tabBarIcon: ({focused, color, size}) => (
             <MaterialIcons 
               name="menu-book" 
-              size={26} 
+              size={focused ? 30 : 26} 
               color={focused ?  
                 theme.colors.primary_strong 
                 : theme.colors.text_super_light
@@ -92,7 +93,7 @@ export function AppRoutes() {
           tabBarIcon: ({focused, color, size}) => (
             <MaterialIcons 
               name="person" 
-              size={26} 
+              size={focused ? 30 : 26} 
               color={focused ?  
                 theme.colors.primary_strong 
                 : theme.colors.text_super_light

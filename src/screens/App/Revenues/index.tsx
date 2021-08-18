@@ -1,5 +1,4 @@
 import React from 'react';
-import { Image } from 'react-native';
 import { useTheme } from 'styled-components';
 
 import Styles from './styles';

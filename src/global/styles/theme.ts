@@ -3,7 +3,7 @@ export default {
     primary: '#74A065',
     primary_strong: '#406334',
 
-    shape: '#F0F0F0',
+    shape: '#FAFAFA',
     background: '#FDFDFD',
     background_tab: '#FCFCFC',
 
