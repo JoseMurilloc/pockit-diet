@@ -1,10 +1,30 @@
 import React from 'react';
-import { View } from 'react-native';
+import ListFoods from '../../../components/ListFoods';
 
-// import { Container } from './styles';
+import { 
+  Container,
+  Header,
+  TitleHeader,
+  MessageHeader,
+} from './styles';
 
 const Replacement: React.FC = () => {
-  return <View />;
+  return (
+    <Container>
+      <Header>
+        <TitleHeader>Lista de substituições</TitleHeader>
+        <MessageHeader>
+          A lista consiste em opções de outros alimentos beneficos para sua alimentação.
+        </MessageHeader>
+      </Header>
+
+      <ListFoods category="Proteinas" />
+      <ListFoods category="Carboidratos" />
+      <ListFoods category="Gorduras" />
+
+     
+    </Container>
+  )
 }
 
 export default Replacement;
