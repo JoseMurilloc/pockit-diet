@@ -5,8 +5,11 @@ import ProfileImage from '../../../global/assets/profile.png';
 import { ProgressBarWelcome } from '../../../components/ProgressBar';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { Card } from '../../../components/Card';
+import { ServerStyleSheet, useTheme } from 'styled-components';
 
 const Initial: React.FC = () => {
+  const theme = useTheme()
+
   return (
     <Styles.Container>
       <Styles.Header>
@@ -33,7 +36,7 @@ const Initial: React.FC = () => {
           progress={0.1}
           styles={{
             height:24,
-            color: "#74A065",
+            color: theme.colors.primary,
             borderRadius: 15,
             width:380
           }} 
@@ -75,6 +78,34 @@ const Initial: React.FC = () => {
           )}
         />
       </Styles.ContainerMeals>
+      
+      <Styles.InfoPro>
+        <Styles.TitlePro>Meu Profissional</Styles.TitlePro>
+        <Styles.ContainerPro>
+          <Styles.HeaderPro>
+            <Styles.ProfileAvatar source={ProfileImage} />
+            <Styles.ContentPro>
+              <Styles.NamePro>Sabrina Oliveira</Styles.NamePro>
+              <Styles.CRN>CRN</Styles.CRN>
+            </Styles.ContentPro>
+          </Styles.HeaderPro>
+          
+          <Styles.LocalService>
+            Localizaçao do atendimento
+          </Styles.LocalService>
+
+          <Styles.Address>
+            <Styles.AddressIcon 
+              name="location-pin" 
+              size={15}
+              color="#208BC8"  
+            />
+            <Styles.AddressText>
+              Rua jose maria - Petrolina-PE
+            </Styles.AddressText>
+          </Styles.Address>
+        </Styles.ContainerPro>
+      </Styles.InfoPro>
     </Styles.Container>
   );
 }
