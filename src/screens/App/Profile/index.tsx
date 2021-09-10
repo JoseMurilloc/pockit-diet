@@ -1,11 +1,8 @@
-import React from 'react';
-import { useTheme } from 'styled-components';
-import { Ionicons } from '@expo/vector-icons';
+import React, { useState, useEffect } from 'react';
 
 import { 
   Container,
   Header,
-  Back,
   ImageProfile,
   Info,
   Name,
@@ -14,24 +11,51 @@ import {
   Goal,
   DataInfo,
   ContainerProfileImage,
+  ButtonExit,
+  ButtonExitText,
+  IconExit,
+  Section,
+  SkinFoldsContainer,
+  Title,
+  CardFolds,
+  Measure,
+  NameFolds,
+  LineCards,
+  PhysicalAssessment,
+  PhysicalContent,
+  LineFatBody,
+  Point,
+  Text,
+  Content
 } from './styles';
 
 import ProfileImage from '../../../global/assets/profile.png';
+import { Pie } from '../../../components/Pie';
+type physicalAssessmentType = {
+  percent: number
+  color: string
+}
 
 const Profile: React.FC = () => {
-  const theme = useTheme()
+
+  const [physicalAssessmentData, setPhysicalAssessmentData] = useState<physicalAssessmentType[]>([]);
+
+  useEffect(() => {
+    setPhysicalAssessmentData([
+      {
+        percent: 17,
+        color: '#DA6491'
+      },
+      {
+        percent: 83,
+        color: '#648BDA'
+      }
+    ])
+  }, [])
 
   return (
     <Container>
       <Header>
-        <Back>
-          <Ionicons 
-            name="arrow-back" 
-            size={24} 
-            color={theme.colors.text}
-          />
-        </Back>
-
         <ContainerProfileImage>
           <ImageProfile 
             source={ProfileImage}
@@ -45,12 +69,73 @@ const Profile: React.FC = () => {
             <WeightCurrent>Peso atual: 52kg</WeightCurrent>
             <Goal>Meta: 50kg</Goal>
           </DataInfo>
-
-          {/* <PhysicalAssessment>
-            <GraphicPizza />
-          </PhysicalAssessment> */}
         </Info>
       </Header>
+
+
+      <Section>
+
+        <PhysicalAssessment>
+          <Title>Avaliação física</Title>
+          <Content>
+            <Pie
+              data={physicalAssessmentData}
+            />
+            <PhysicalContent>
+              <LineFatBody>
+                <Point type="muscle" />
+                <Text>83% (Massa magra)</Text>
+              </LineFatBody>
+              <LineFatBody>
+                <Point type="fat" />
+                <Text>17% (Gordura corporal)</Text>
+              </LineFatBody>
+            </PhysicalContent>      
+          </Content>   
+        </PhysicalAssessment>
+
+        <SkinFoldsContainer>
+          <Title>Pregas Cutâneas</Title>
+          <LineCards>
+            <CardFolds>
+              <NameFolds>Triceps</NameFolds>
+              <Measure>17.0 mm</Measure>
+            </CardFolds>
+            <CardFolds>
+              <NameFolds>Triceps</NameFolds>
+              <Measure>17.0 mm</Measure>
+            </CardFolds>
+            <CardFolds>
+              <NameFolds>Triceps</NameFolds>
+              <Measure>17.0 mm</Measure>
+            </CardFolds>
+          </LineCards>
+          <LineCards style={{marginTop: 13}}>
+            <CardFolds>
+              <NameFolds>Triceps</NameFolds>
+              <Measure>17.0 mm</Measure>
+            </CardFolds>
+            <CardFolds>
+              <NameFolds>Triceps</NameFolds>
+              <Measure>17.0 mm</Measure>
+            </CardFolds>
+            <CardFolds>
+              <NameFolds>Triceps</NameFolds>
+              <Measure>17.0 mm</Measure>
+            </CardFolds>
+          </LineCards>
+          
+        </SkinFoldsContainer>
+
+        <ButtonExit>
+          <IconExit 
+            name="exit-to-app" 
+            size={24} 
+            color="#570C0C" 
+          />
+          <ButtonExitText>Sair da conta</ButtonExitText>
+        </ButtonExit>
+      </Section>
     </Container>
   );
 }
