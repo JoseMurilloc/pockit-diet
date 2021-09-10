@@ -5,7 +5,7 @@ import ProfileImage from '../../../global/assets/profile.png';
 import { ProgressBarWelcome } from '../../../components/ProgressBar';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { Card } from '../../../components/Card';
-import { ServerStyleSheet, useTheme } from 'styled-components';
+import { useTheme } from 'styled-components';
 
 const Initial: React.FC = () => {
   const theme = useTheme()

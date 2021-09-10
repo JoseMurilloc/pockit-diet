@@ -1,24 +1,15 @@
 import React from 'react';
-import { useTheme } from 'styled-components';
 
 import Styles from './styles';
 
 const Revenues: React.FC = () => {
-  const theme = useTheme() 
 
   return (
     <Styles.Container>
       <Styles.Header>
-        <Styles.Back>
-          <Styles.IconBack 
-            name="arrow-back" 
-            size={24} 
-            color={theme.colors.text}
-          />
-        </Styles.Back>
         <Styles.Title>Receitas</Styles.Title>
         <Styles.Message>
-          Se delicie com receitas saúdaveis, faceis e que vão te ajudar a manter o foco.
+          Se delicie com receitas saudáveis, fáceis e que vão te ajudar a manter o foco.
         </Styles.Message>
       </Styles.Header>
 

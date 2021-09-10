@@ -85,6 +85,7 @@ const TitlePro = styled.Text`
   margin-bottom: 16px;
   margin-top: 16px;
 `;
+
 const ContainerPro = styled.View`
   background: #ECEDEE;
   border-radius: 8px;
@@ -92,17 +93,21 @@ const ContainerPro = styled.View`
   height: 152px;
   padding: 16px 16px;
 `;
+
 const HeaderPro = styled.View`
   flex-direction: row;
 `;
+
 const ProfileAvatar = styled.Image`
   width: 56px;
   height: 56px;
   border-radius: 28px;
 `;
+
 const ContentPro = styled.View`
   margin-left: 8px;
 `;
+
 const NamePro = styled.Text`
   font-weight: bold;
   font-size: 16px;
@@ -110,6 +115,7 @@ const NamePro = styled.Text`
   color: ${({theme}) => theme.colors.text};
   font-family: ${({theme}) => theme.fonts.bold};
 `;
+
 const CRN = styled.Text`
   font-size: 12px;
   line-height: 14px;
@@ -126,13 +132,16 @@ const LocalService = styled.Text`
   font-family: ${({theme}) => theme.fonts.bold};
   margin-top: 16px;
 `;
+
 const Address = styled.View`
   flex-direction: row;
   margin-top: 9px;
 `;
+
 const AddressIcon = styled(MaterialIcons)`
   margin-right: 7px;
 `;
+
 const AddressText = styled.Text`
   font-size: 16px;
   line-height: 19px;

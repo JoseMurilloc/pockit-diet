@@ -12,17 +12,7 @@ const Header = styled.View`
   padding: 0 14px;
   padding-top: 38px;
 `;
-const Back = styled.View`
-  background: rgba(19, 19, 19, 0.03);
-  border-radius: 2px;
-  width: 40px;
-  height: 40px;
 
-  justify-content: center;
-  align-items: center;
-
-`;
-const IconBack = styled(Ionicons)``;
 const Message = styled.Text`
   width: 307px;
   height: 32px;
@@ -127,8 +117,6 @@ const CaloriesTotalText = styled.Text`
 const Styles = {
   Container,
   Header,
-  Back,
-  IconBack,
   Title,
   Message,
   RevenuesList,
