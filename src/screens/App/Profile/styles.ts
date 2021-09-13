@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import {ScrollView} from 'react-native'
 
-export const Container = styled.View`
+export const Container = styled(ScrollView)`
   flex: 1;
   background-color: ${({theme}) => theme.colors.background};
 `; 
@@ -81,6 +82,7 @@ export const ButtonExit = styled.TouchableOpacity`
   
   background: rgba(255, 156, 156, 0.5);
   border-radius: 8px;
+  margin-bottom: 57px;
 `;
 
 export const Section = styled.View`
