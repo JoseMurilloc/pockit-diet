@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { RFValue } from 'react-native-responsive-fontsize'
 
 const Container = styled.View`
   flex: 100%;
@@ -36,9 +37,12 @@ const ContentPicture = styled.View`
   width: 100%;
   margin-top: 42px;
   margin-bottom: 33px;
+  height: ${RFValue(275)}px;
 `;
 
-const ImageWelcome = styled.Image``;
+const ImageWelcome = styled.Image`
+  height: 100%;
+`;
 
 const ContentProgressBar = styled.View`
   width: 100%; 

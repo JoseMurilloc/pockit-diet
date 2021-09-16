@@ -23,6 +23,7 @@ export default function App() {
   if (!fontLoaded) {
     return <AppLoading />
   }
+
   return (
     <ThemeProvider theme={theme} >
         <StatusBar barStyle="dark-content" backgroundColor="#FDFDFD"/>

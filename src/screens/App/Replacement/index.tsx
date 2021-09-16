@@ -14,11 +14,11 @@ const Replacement: React.FC = () => {
       <Header>
         <TitleHeader>Lista de substituições</TitleHeader>
         <MessageHeader>
-          A lista consiste em opções de outros alimentos beneficos para sua alimentação.
+          A lista consiste em opções de outros alimentos benéficos para sua alimentação.
         </MessageHeader>
       </Header>
 
-      <ListFoods category="Proteinas" />
+      <ListFoods category="Proteínas" />
       <ListFoods category="Carboidratos" />
       <ListFoods category="Gorduras" />
 
