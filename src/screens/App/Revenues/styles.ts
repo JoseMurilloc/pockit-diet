@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import { Ionicons } from '@expo/vector-icons'; 
-import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import { FlatList, RectButton, ScrollView } from 'react-native-gesture-handler';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 
 const Container = styled(ScrollView)`
@@ -44,11 +44,14 @@ const TitleCategory = styled.Text`
   margin-bottom: 16px;
   margin-top: 32px;
 `;
-const ListRevenues = styled(FlatList)``;
+const ListRevenues = styled(FlatList)`
+  height: ${RFValue(390)}px;
+  width: 100%;
+`;
 
-const CardContainer = styled.View`
+const CardContainer = styled(RectButton)`
   width: 183px;
-  height: 390px;  
+  height: 100%;  
 `;
 
 const CardRevenue = styled.View.attrs({
@@ -64,7 +67,7 @@ const CardRevenue = styled.View.attrs({
 
 const RevenueImage = styled.Image`
   width: 100%;
-  height: 264px;
+  height: ${RFValue(264)}px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 `;

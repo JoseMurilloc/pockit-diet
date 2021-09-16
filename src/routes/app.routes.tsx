@@ -10,6 +10,7 @@ import Revenues from '../screens/App/Revenues'
 
 import Replacement from '../screens/App/Replacement'
 import Profile from '../screens/App/Profile'
+import { RevenueStack } from './stackRevenue.routes'
 
 const Tab = createBottomTabNavigator()
 
@@ -54,9 +55,9 @@ export function AppRoutes() {
 
       <Tab.Screen 
         name="Receitas"
-        component={Revenues}
+        component={RevenueStack}
         options={{
-          tabBarIcon: ({focused, color, size}) => (
+          tabBarIcon: ({focused}) => (
             <MaterialIcons 
               name="local-dining" 
               size={focused ? 30 : 26} 
@@ -85,7 +86,7 @@ export function AppRoutes() {
           )
         }}
       />
-
+   
       <Tab.Screen 
         name="Perfil"
         component={Profile}
@@ -102,6 +103,7 @@ export function AppRoutes() {
           )
         }}
       />
+ 
     </Tab.Navigator>
   )
 }

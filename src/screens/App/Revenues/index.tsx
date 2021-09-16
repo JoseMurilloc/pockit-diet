@@ -1,8 +1,11 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 
 import Styles from './styles';
 
-const Revenues: React.FC = () => {
+function Revenues () {
+
+  const navigation = useNavigation()
 
   return (
     <Styles.Container>
@@ -22,7 +25,9 @@ const Revenues: React.FC = () => {
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={item => (
-            <Styles.CardContainer>
+            <Styles.CardContainer 
+              onPress={() => navigation.navigate('RevenueDetail')}
+            >
               <Styles.CardRevenue>
                 <Styles.RevenueImage 
                   source={{uri: 'https://www.lecard.com.br/wp-content/uploads/2018/07/Cart%C3%A3o-Refei%C3%A7%C3%A3o-Saiba-a-import%C3%A2ncia-de-ter-um.jpg'}}
